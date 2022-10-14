@@ -1,8 +1,10 @@
-package com.miempresa.aplicaciondemo;
+package com.miempresa.aplicaciondemo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.miempresa.aplicaciondemo.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.miempresa.aplicaciondemo;
+package com.miempresa.aplicaciondemo.modelos;
 
 public class Producto {
 

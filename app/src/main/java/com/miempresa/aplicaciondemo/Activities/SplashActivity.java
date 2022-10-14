@@ -1,9 +1,11 @@
-package com.miempresa.aplicaciondemo;
+package com.miempresa.aplicaciondemo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.miempresa.aplicaciondemo.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

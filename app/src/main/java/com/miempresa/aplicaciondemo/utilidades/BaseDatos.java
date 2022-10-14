@@ -1,4 +1,4 @@
-package com.miempresa.aplicaciondemo;
+package com.miempresa.aplicaciondemo.utilidades;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

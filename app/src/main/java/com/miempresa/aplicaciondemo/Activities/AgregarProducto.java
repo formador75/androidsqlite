@@ -1,4 +1,4 @@
-package com.miempresa.aplicaciondemo;
+package com.miempresa.aplicaciondemo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.miempresa.aplicaciondemo.R;
+import com.miempresa.aplicaciondemo.controladores.ControladorProductos;
+import com.miempresa.aplicaciondemo.modelos.Producto;
 
 public class AgregarProducto extends AppCompatActivity {
 
@@ -36,10 +40,31 @@ public class AgregarProducto extends AppCompatActivity {
                 String codigo = etCodigo.getText().toString();
                 String nombre = etNombre.getText().toString();
                 String descripcion = etDescripcion.getText().toString();
+                Double valorventa;
                 Double valorcompra = Double.parseDouble(etValorCompra.getText().toString());
-                Double valorventa = Double.parseDouble(etValorVenta.getText().toString());
+                try {
+                     valorventa = Double.parseDouble(etValorVenta.getText().toString());
+                }catch (Exception e){
+                    etValorVenta.setError("ingrese un numero");
+                    etValorVenta.requestFocus();
+                    return;
+                }
+
                 Double existencias = Double.parseDouble(etExistencias.getText().toString());
                 Producto producto = new Producto(codigo,nombre,descripcion,valorcompra,valorventa,existencias);
+                if("".equals(codigo)){
+                    etCodigo.setError("ingrese un codigo de producto");
+                    etCodigo.requestFocus();
+                    return;
+                }
+
+                if("".equals(nombre)){
+                    etNombre.setError("ingrese un codigo de producto");
+                    etNombre.requestFocus();
+                    return;
+                }
+
+
                 long id = controlador.agregarProducto(producto);
 
                 if(id == -1){
@@ -58,8 +83,7 @@ public class AgregarProducto extends AppCompatActivity {
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AgregarProducto.this, MainActivity.class);
-                startActivity(i);
+                controlador.listarProductos();
             }
         });
 
