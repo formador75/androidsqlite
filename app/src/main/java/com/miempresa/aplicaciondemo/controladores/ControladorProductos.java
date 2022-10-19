@@ -45,7 +45,6 @@ public class ControladorProductos {
                 null,
                 null,
                 null
-
         );
         if(cursor == null){
             return productos;
@@ -69,15 +68,9 @@ public class ControladorProductos {
 
             Log.d("sqliteTEST", producto.toString());
 
-
-
         }while(cursor.moveToNext());
-
          cursor.close();
-
         return productos;
-
-
     }
 
 }
